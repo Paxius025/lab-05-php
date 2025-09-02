@@ -3,13 +3,13 @@ require("../db/connect_db.php");
 $course_code = $_GET["course_code"];
 
 // Fetch all students to display in the dropdown
-$sql = "SELECT student_code, student_name FROM students";
+$sql = "SELECT student_code, student_name FROM students WHERE $course_code";
 $result = mysqli_query($conn, $sql);    
 
 echo "<center>";
 echo "<form action='save_add_exam_result.php' method='post'>";
 echo "<table border=1 width=40%>";
-echo "<tr><td>Course Code:</td><td><input type='text' name='course_code' value='$course_code' /></td></tr>";
+echo "<tr><td>Course Code:</td><td><input type='text' name='course_code' readonly value='$course_code' /></td></tr>";
 
 // Dropdown for Student Code
 echo "<tr><td>Student Code:</td><td>";
