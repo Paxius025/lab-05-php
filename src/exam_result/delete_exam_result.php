@@ -2,8 +2,7 @@
 
 require("../db/connect_db.php");
 if (isset($_GET['id']) && isset($_GET['course_code'])) {
-    // echo "ID: " . $_GET['id'] . "<br>";
-    // echo "Course Code: " . $_GET['course_code'] . "<br>";
+    
     $course_code = $_GET['course_code'];
     $id = $_GET['id'];
 

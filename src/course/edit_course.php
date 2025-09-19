@@ -9,7 +9,7 @@ $course = mysqli_fetch_assoc($result);
 ?>
 <form action="save_course.php" method="post">
     <input type="hidden" name="course_code_edit" value="<?php echo htmlspecialchars($course_code); ?>" />
-    <table border="1">
+    <table>
         <tr>
             <td>Course Code:</td>
             <td><input type="text" name="course_code" value="<?php echo htmlspecialchars($course["course_code"]); ?>" />
