@@ -1,5 +1,7 @@
 <?php
 require("../db/connect_db.php");
+
+require("../navbar.php");
 $course_code = $_GET["course_code"];
 $sql = "SELECT * FROM courses WHERE course_code='$course_code'";
 $result = mysqli_query($conn, $sql);

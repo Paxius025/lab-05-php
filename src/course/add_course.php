@@ -1,5 +1,6 @@
 <?php
 require("../db/connect_db.php");
+require("../navbar.php");
 ?>
 <!DOCTYPE html>
 <html>

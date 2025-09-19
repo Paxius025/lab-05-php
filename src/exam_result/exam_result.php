@@ -1,4 +1,5 @@
 <?php
+require("../navbar.php");
 require("../db/connect_db.php");
 $sql="SELECT * FROM courses";
 $result=mysqli_query($conn, $sql);

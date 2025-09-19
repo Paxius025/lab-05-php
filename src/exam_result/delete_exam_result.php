@@ -1,14 +1,17 @@
 <?php
 
 require("../db/connect_db.php");
-if (isset($_GET['student_code'])) {
-    $student_code = $_GET['student_code'];
+if (isset($_GET['id']) && isset($_GET['course_code'])) {
+    // echo "ID: " . $_GET['id'] . "<br>";
+    // echo "Course Code: " . $_GET['course_code'] . "<br>";
+    $course_code = $_GET['course_code'];
+    $id = $_GET['id'];
 
-    $stmt = $conn->prepare("DELETE FROM exam_results WHERE student_code = ?");
-    $stmt->bind_param("s", $student_code);
+    $stmt = $conn->prepare("DELETE FROM exam_results WHERE id = ?");
+    $stmt->bind_param("i", $id);
 
     if ($stmt->execute()) {
-        header("location: exam_result.php");
+        header("location: show_exam_result.php?course_code=$course_code");
         exit();
     } else {
         echo "Error deleting exam result.";
@@ -16,6 +19,6 @@ if (isset($_GET['student_code'])) {
 
     $stmt->close();
 } else {
-    echo "Student code not provided.";
+    echo "ID not provided.";
 }
 ?>

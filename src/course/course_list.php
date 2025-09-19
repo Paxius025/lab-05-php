@@ -1,5 +1,7 @@
 <?php
 require("../db/connect_db.php");
+require("../navbar.php");
+
 $sql = "SELECT * FROM courses";
 $result = mysqli_query($conn, $sql);
 echo "<center>";
