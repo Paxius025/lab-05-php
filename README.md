@@ -47,22 +47,28 @@
 ```
 
 ## คำอธิบายไฟล์หลัก
-- database.sql — โครงสร้างและข้อมูลตัวอย่างของฐานข้อมูล  
-- docker-compose.yml — กำหนดบริการ (web, db) สำหรับรันด้วย Docker Compose  
-- php/Dockerfile — สร้างอิมเมจ PHP/Apache สำหรับรันแอป  
-- src/db/connect_db.php — ตั้งค่าการเชื่อมต่อกับฐานข้อมูล (แก้ค่าผู้ใช้ รหัสผ่าน ชื่อฐานข้อมูลตามจริง)  
-- src/index.php — หน้าเริ่มต้นของแอป  
-- src/navbar.php — เมนูนำทางที่เรียกใช้งานร่วมในหน้าอื่นๆ  
-- โฟลเดอร์ course, student, exam_result — ฟังก์ชัน CRUD และการแสดงผลของแต่ละโมดูล
+- **database.sql** — โครงสร้างและข้อมูลตัวอย่างของฐานข้อมูล  
+- **docker-compose.yml** — กำหนดบริการ (web, db) สำหรับรันด้วย Docker Compose  
+- **php/Dockerfile** — สร้างอิมเมจ PHP/Apache สำหรับรันแอป  
+- **src/db/connect_db.php** — ตั้งค่าการเชื่อมต่อกับฐานข้อมูล (แก้ค่าผู้ใช้ รหัสผ่าน ชื่อฐานข้อมูลตามจริง)  
+- **src/index.php** — หน้าเริ่มต้นของแอป  
+- **src/navbar.php** — เมนูนำทางที่เรียกใช้งานร่วมในหน้าอื่นๆ  
+- **โฟลเดอร์ course, student, exam_result** — ฟังก์ชัน **CRUD** และการแสดงผลของแต่ละโมดูล
 
 ## ติดตั้งและรัน (ตัวอย่าง)
 1. ตรวจสอบไฟล์ docker-compose.yml เพื่อดูพอร์ตและรหัสผ่านฐานข้อมูล  
 2. สร้างคอนเทนเนอร์และรันบริการ:
-   - docker-compose up -d --build
+```bash
+docker-compose up -d --build
+```
 3. นำเข้าโครงสร้างฐานข้อมูล (ถ้าใช้ MySQL ภายในคอนเทนเนอร์):
-   - docker exec -i <db_container_name> mysql -u<user> -p<password> <database> < database.sql
-   หรือ (เครื่องท้องถิ่น): mysql -u user -p database < database.sql
-4. แก้ไข src/db/connect_db.php ให้ตรงกับค่าการเชื่อมต่อจริง  
+```bash
+docker exec -i <db_container_name> mysql -u<user> -p<password> <database> < database.sql 
+```
+```bash
+   หรือ (local): mysql -u user -p database < database.sql
+```
+4. แก้ไข **src/db/connect_db.php** ให้ตรงกับค่าการเชื่อมต่อจริง  
 5. เปิดเว็บเบราว์เซอร์ไปที่พอร์ตที่กำหนด (เช่น http://localhost:80 หรือพอร์ตใน docker-compose.yml)
 
 ## การทดสอบฟีเจอร์หลัก
@@ -73,5 +79,3 @@
 ## หมายเหตุ
 - ตรวจสอบสิทธิ์ไฟล์/โฟลเดอร์ (permissions) หากเกิดปัญหาอ่าน/เขียนไฟล์  
 - ปรับค่าคอนฟิกใน docker-compose.yml และ connect_db.php ให้สอดคล้องกันเสมอ
-
-(จบเอกสารสรุปสำหรับ Lab 5)
