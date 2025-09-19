@@ -11,6 +11,7 @@
 - โปรแกรมแก้ไขโค้ด
 
 ## โครงสร้างไฟล์ (ตัวอย่าง)
+```bash
 ├── database.sql  
 ├── docker-compose.yml  
 ├── php/  
@@ -43,6 +44,7 @@
         ├── save_add_student.php  
         ├── save_student.php  
         └── student_list.php
+```
 
 ## คำอธิบายไฟล์หลัก
 - database.sql — โครงสร้างและข้อมูลตัวอย่างของฐานข้อมูล  
