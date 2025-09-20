@@ -11,12 +11,13 @@ require("../navbar.php");
 
 <body>
     <center>
-        <table border="1" width="60%">
+        <h2>Course List</h2>
+        <table border="1" width="80%">
             <tr>
                 <th>Course Code</th>
                 <th>Course Name</th>
                 <th>Credit</th>
-                <th>Operationt</th>
+                <th>Operation</th>
             </tr>
             <?php
             $sql = "SELECT * FROM courses";

@@ -15,7 +15,7 @@ $result = mysqli_query($conn, $sql);
 <body>
     <center>
         <h2>Student List</h2>
-        <table border="1" width="40%">
+        <table border="1" width="80%">
             <tr>
                 <th>student Code</th>
                 <th>student Name</th>

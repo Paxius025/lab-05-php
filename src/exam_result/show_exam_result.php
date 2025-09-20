@@ -21,8 +21,8 @@ $result = mysqli_query($conn, $sql);
 
 <body>
     <center>
-        <h1>Exam Result <?php echo $course["course_name"]." (".$course["course_code"].")"; ?></h1>
-        <table border="1" width="40%">
+        <h2>Exam Result <?php echo $course["course_name"]." (".$course["course_code"].")"; ?></h2>
+        <table border="1" width="80%">
             <tr>
                 <th>Student Code</th>
                 <th>Student Name</th>
@@ -35,7 +35,7 @@ $result = mysqli_query($conn, $sql);
                 <td><?php echo $row["student_name"]; ?></td>
                 <td><?php echo $row["point"]; ?></td>
                 <td>
-                    <a href='edit_exam_result.php?student_code=<?php echo $row["student_code"]; ?>'>Edit</a>
+                    <a href='edit_exam_result.php?id=<?php echo $row["id"]; ?>'>Edit</a>
                     <a href='delete_exam_result.php?id=<?php echo $row["id"];?>&course_code=<?php echo $course_code; ?>'
                         onclick="return confirm('คุณต้องการลบคะแนนนักศึกษาคนนี้หรือไม่?');">delete</a>
                 </td>
