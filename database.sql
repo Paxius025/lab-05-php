@@ -11,14 +11,14 @@ CREATE TABLE students (
 CREATE TABLE courses (
     course_code CHAR(8) PRIMARY KEY,
     course_name VARCHAR(50) NOT NULL,
-    credits INT CHECK (credits > 0)
+    credit INT CHECK (credit > 0)
 );
 
 CREATE TABLE exam_results (
     id INT PRIMARY KEY AUTO_INCREMENT,
     student_code CHAR(10),
     course_code CHAR(8),
-    point INT CHECK (score BETWEEN 0 AND 100),
+    point INT CHECK (point BETWEEN 0 AND 100)
 );
 
 INSERT INTO students(student_code, student_name, gender)
@@ -46,7 +46,7 @@ VALUES ('01204114', '6540201111', 85),
        ('01204271', '6540206666', 60),
       ('01204271', '6540207777', 25.5);
 
-INSERT INTO courses(course_code, course_name, credits)
+INSERT INTO courses(course_code, course_name, credit)
 VALUES
 ('01204114', 'Intro to Hardware Development', 3),
 ('01204223', 'Practicum in Computer Engineering', 1),
